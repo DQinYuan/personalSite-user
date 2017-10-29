@@ -37,14 +37,17 @@
                       </ul>
                   </li>
                   <li class="delActive"><a class="cate-a"  @click="panelFilt(3)">聊聊生活</a></li>
-                  <li class="delActive"><a id="leaveMessage"><span class="glyphicon glyphicon-pencil"/>留言</a></li>
+                  <li class="delActive">
+                    <router-link to='/leaveAmessage'>
+                      <span class="glyphicon glyphicon-pencil"/>留言
+                    </router-link>
+                  </li>
               </ul>
               
               <UserBoard/>
               
           </div>
-          <LoginPopup/>
-          <RegisterPopup/>
+
 
       </div>
     </nav>
@@ -62,6 +65,9 @@
     <br/>
     <br/>
     <router-view/>
+    <LoginPopup/>
+    <RegisterPopup/>
+    <TipPopup/>
   </div>
 </template>
 
@@ -69,6 +75,7 @@
 import UserBoard from './components/nav/UserBoard.vue'
 import RegisterPopup from './components/popup/RegisterPopup.vue'
 import LoginPopup from './components/popup/LoginPopup.vue'
+import TipPopup from './components/popup/TipPopup.vue'
 import store from './vuex/store.js'
 
 export default {
@@ -76,7 +83,7 @@ export default {
     return {
     }
   },
-  components: {UserBoard, RegisterPopup, LoginPopup},
+  components: {UserBoard, RegisterPopup, LoginPopup, TipPopup},
   methods:{
     panelFilt(cateId){
       this.$router.push('/');

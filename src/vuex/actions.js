@@ -1,5 +1,6 @@
 
 let axios = require("../axios");
+import bus from "../bus"
 
 
 const actions = {
@@ -79,6 +80,27 @@ const actions = {
         } else {
           commit('AddFailMsg', response.data.errorInfo);
         }
+      })
+      .catch( function (error)   { console.log(error);  } );
+  },
+  InitLeaveMessage({commit}){
+    axios.get("/leavemessages")
+      .then(function (response){
+        commit('InitLeaveMessage', response.data);
+      })
+      .catch( function (error)   { console.log(error);  } );
+  },
+  AddLeaveMessage({commit}, custom){
+    axios.post("/leavemessages", custom.leaveMessage)
+      .then(function (response){
+        if ( response.data.isSuccess ){
+          commit("AddLeaveMessage", {originalContent:custom.leaveMessage.originalContent
+                                    , content:response.data.content
+                                    , username:custom.username});
+          bus.$emit("tip", "留言成功");
+        } else {
+          bus.$emit("tip", response.data.errorInfo);
+        } 
       })
       .catch( function (error)   { console.log(error);  } );
   }

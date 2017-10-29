@@ -29,7 +29,9 @@ export default {
     }
   },
   mounted(){
-    store.dispatch("GetArtComs");
+    if ( !this.artComs.length ){
+      store.dispatch("GetArtComs");
+    }
   }
 }
 </script>

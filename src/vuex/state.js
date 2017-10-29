@@ -6,7 +6,8 @@ const state = {
   artComs:[],
   article:{},
   comments:[],
-  readId:-1
+  readId:-1,
+  leaveMessages:[]
 };
 
 export default state

@@ -52,6 +52,16 @@ const mutations = {
         //允许不借助state而是直接对引用进行修改
         custom.comment.originalContent = custom.originalContent;
         custom.comment.content = custom.content;
+    },
+    InitLeaveMessage(state, leaveMessages){
+        for ( let i = 0; i < leaveMessages.length; i++ ){
+            leaveMessages[i].canModify = false;
+        }
+        state.leaveMessages = leaveMessages;
+    },
+    AddLeaveMessage(state, leaveMessage){
+        leaveMessage.canModify = true;
+        state.leaveMessages.unshift(leaveMessage);
     }
 };
 

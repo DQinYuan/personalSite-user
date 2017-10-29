@@ -23,6 +23,9 @@ const getters = {
   },
   readId:(state) => {
     return state.readId
+  },
+  leaveMessages:(state) => {
+    return state.leaveMessages
   }
 };
 
