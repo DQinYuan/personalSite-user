@@ -7,7 +7,8 @@ const state = {
   article:{},
   comments:[],
   readId:-1,
-  leaveMessages:[]
+  leaveMessages:[],
+  friendlyLinks:[]
 };
 
 export default state

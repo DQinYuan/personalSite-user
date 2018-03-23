@@ -35,7 +35,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label"></label>
                             <div class="col-sm-10">
-                                <img id="loginimg" src="http://localhost:9090/authImg.jpg"/>
+                                <img id="loginimg" src="/authImg.jpg"/>
                             </div>
                         </div>
                         <div class='alert alert-error' v-for="msg in failMsgs"> 

@@ -1,3 +1,5 @@
+import state from './state';
+
 var axios= require('../axios');
 
 
@@ -26,6 +28,9 @@ const getters = {
   },
   leaveMessages:(state) => {
     return state.leaveMessages
+  },
+  friendlyLinks:(state) => {
+    return state.friendlyLinks
   }
 };
 

@@ -15,7 +15,7 @@
         {{leaveMessage.username}} : 
 <!--         <a class="pull-right" v-if='leaveMessage.canModify' 
   :leaveMessageId='leaveMessage.leaveMessageId' @click='modify($event)'>修改</a> -->
-        <div>{{leaveMessage.content}}</div>
+        <div v-html="leaveMessage.content"></div>
       </li>
     </ul>
   </div>

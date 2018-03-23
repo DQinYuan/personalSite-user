@@ -29,10 +29,10 @@ const devMiddleware = require('webpack-dev-middleware')(compiler, {
   quiet: true
 })
 
-const hotMiddleware = require('webpack-hot-middleware')(compiler, {
-  log: false,
-  heartbeat: 2000
-})
+// const hotMiddleware = require('webpack-hot-middleware')(compiler, {
+//   log: false,
+//   heartbeat: 2000
+// })
 // force page reload when html-webpack-plugin template changes
 // currently disabled until this is resolved:
 // https://github.com/jantimon/html-webpack-plugin/issues/680
@@ -45,7 +45,7 @@ const hotMiddleware = require('webpack-hot-middleware')(compiler, {
 
 // enable hot-reload and state-preserving
 // compilation error display
-app.use(hotMiddleware)
+//app.use(hotMiddleware)
 
 // proxy api requests
 Object.keys(proxyTable).forEach(function (context) {

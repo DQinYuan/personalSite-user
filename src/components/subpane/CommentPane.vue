@@ -16,8 +16,7 @@
         &nbsp;&nbsp;{{comment.username}}&nbsp;&nbsp;回复&nbsp;&nbsp;{{comment.replyUsername}}：
         <a class="modifyComment pull-right" type="button" v-if="comment.canModify" 
         @click="modifyComment($event)" :commentId='comment.commentId'>修改</a>
-        <br/>
-        {{comment.content}}
+        <div v-html="comment.content"></div>
       </li>
     </ul>
   </div>

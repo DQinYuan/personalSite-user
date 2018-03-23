@@ -12,6 +12,8 @@ const actions = {
                 commit('SetNickName', response.data.nickname);
             } else {
                 commit('AddFailMsg', response.data.errormsg);
+                let timestamp = new Date().getTime();
+                $("#loginimg").attr("src", $("#loginimg").attr('src') + '?' +timestamp);
             } 
             
         })
@@ -101,6 +103,13 @@ const actions = {
         } else {
           bus.$emit("tip", response.data.errorInfo);
         } 
+      })
+      .catch( function (error)   { console.log(error);  } );
+  },
+  InitFriendlyLink({commit}){
+    axios.get("/friendly-links")
+      .then(function(response){
+        commit("InitFriendlyLink", response.data);
       })
       .catch( function (error)   { console.log(error);  } );
   }

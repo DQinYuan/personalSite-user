@@ -62,6 +62,9 @@ const mutations = {
     AddLeaveMessage(state, leaveMessage){
         leaveMessage.canModify = true;
         state.leaveMessages.unshift(leaveMessage);
+    },
+    InitFriendlyLink(state, friendlyLinks){
+        state.friendlyLinks = friendlyLinks;
     }
 };
 
